@@ -20,7 +20,7 @@ genome_downloader/
 │   ├── genomes/
 │   └── blast_db/
 │
-├── scripts/
+├── src/
 │   ├── download_ref_genomes.slurm
 │   ├── genome_pipeline.py
 │   └── build_blast_dbs.py
@@ -89,13 +89,13 @@ input/bat_genomes.tsv
 
 ### 2. Submit slurm script
 ```bash
-sbatch scripts/download_ref_genomes.slurm <tsv_filename> <phylogenetic_Order>
+sbatch src/download_ref_genomes.slurm <tsv_filename> <phylogenetic_Order>
 ```
 
 #### Example:
 
 ```bash
-sbatch scripts/download_ref_genomes.slurm bat_genomes.tsv Chiroptera
+sbatch src/download_ref_genomes.slurm bat_genomes.tsv Chiroptera
 ```
 --- 
 
@@ -261,7 +261,7 @@ genome_downloader/
 │           └── Pteropus/
 │               └── Pteropus_vampyrus_GCF_123456789.1.*
 │
-├── scripts/
+├── src/
 │   ├── download_ref_genomes.slurm
 │   ├── genome_pipeline.py
 │   └── build_blast_dbs.py
@@ -316,8 +316,8 @@ input/
 Then submit them independently:
 
 ```bash
-sbatch scripts/download_ref_genomes.slurm insectivorous_bats.tsv Chiroptera
-sbatch scripts/download_ref_genomes.slurm fruit_bats.tsv Chiroptera
+sbatch src/download_ref_genomes.slurm insectivorous_bats.tsv Chiroptera
+sbatch src/download_ref_genomes.slurm fruit_bats.tsv Chiroptera
 ```
 
 Both jobs add genomes to the shared collections:

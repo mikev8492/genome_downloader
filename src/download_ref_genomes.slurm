@@ -12,12 +12,12 @@
 set -euo pipefail
 
 # Usage:
-#   sbatch scripts/download_ref_genomes.slurm bat_genomes.tsv Chiroptera
+#   sbatch src/download_ref_genomes.slurm bat_genomes.tsv Chiroptera
 #
 # Place the TSV file in input/ before submitting the job.
 
 if [[ $# -ne 2 ]]; then
-    echo "Usage: sbatch scripts/download_ref_genomes.slurm <genomes.tsv> <order>"
+    echo "Usage: sbatch src/download_ref_genomes.slurm <genomes.tsv> <order>"
     exit 1
 fi
 
@@ -25,8 +25,8 @@ PROJECT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"
 TSV_FILE="$PROJECT_DIR/input/$1"
 ORDER="${2// /_}"
 
-GENOME_SCRIPT="$PROJECT_DIR/scripts/genome_pipeline.py"
-BLAST_SCRIPT="$PROJECT_DIR/scripts/build_blast_dbs.py"
+GENOME_SCRIPT="$PROJECT_DIR/src/genome_pipeline.py"
+BLAST_SCRIPT="$PROJECT_DIR/src/build_blast_dbs.py"
 
 NAME="$(basename "$TSV_FILE")"
 NAME="${NAME%.*}"
