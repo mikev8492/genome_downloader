@@ -73,7 +73,7 @@ genome_downloader
 conda activate genome_downloader
 ```
 
-## Running the pipeline
+## Usage
 
 From the project root:
 
@@ -100,19 +100,6 @@ sbatch src/download_ref_genomes.slurm bat_genomes.tsv Chiroptera
 --- 
 
 #### NOTE:
-The script automatically looks for:
-
-```text
-input/bat_genomes.tsv
-```
-
-The order argument becomes the parent directory under both:
-
-```text
-output/genomes/
-output/blast_db/
-```
-
 The script automatically looks for:
 
 ```text
